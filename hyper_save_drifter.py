@@ -145,19 +145,19 @@ def migrate_save(old_save_path,temp_save_path,save_num=3,new_file_name=None):
 def commandline_main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('save_to_move', help='')
-    parser.add_argument('temp_save', help='')
-    parser.add_argument('--save-num', nargs=1, type=int)
-    parser.add_argument("--change-name", nargs=1, type=str)
+    parser.add_argument('save_to_move_path', help='Absolute Path to the save file to be kept. Content/Progress will be taken from this file.')
+    parser.add_argument('temp_save_path', help='Absolute Path to the save file created on this machine. Machine-specific header will be taken from this file.')
+    parser.add_argument('--save-num', nargs=1, type=int, help="(optional) Save Slot number to save in. range o-3 (inclusive). [Default: 3/last slot]")
+    parser.add_argument("--change-name", nargs=1, type=str, help="(optional) Name to change the in-game save slot to.")
     args = parser.parse_args()
 
     #This is the old save that we want to put on this machine.
     # save_to_move = os.path.join(dir_path, "my_old_save_file.sav") #relative path
-    save_to_move = args.save_to_move
+    save_to_move = args.save_to_move_path
 
     #this is the new save file that has the header we want
     # temp_save_path = os.path.join(dir_path, "no_progress_save.sav")#relative path
-    temp_save_path = args.temp_save
+    temp_save_path = args.temp_save_path
 
 
     #save slot number. The count starts at 0 so if you want file 4 to be written over,

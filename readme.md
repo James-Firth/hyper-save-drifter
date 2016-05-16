@@ -11,7 +11,7 @@
 
 :hand: **Stop! Back up your save files before use.**
 *Note:* This program has only been tested moving from Windows to Linux so far.
-More testing will be done.
+More testing will be done. Please make github issues for any feature suggestions or problem that arise.
 
 # Installation
 
@@ -19,6 +19,8 @@ More testing will be done.
     * If you are not familiar with python, please install python and then run the command (via commandline) `python hyper_save_drifter.py` from the folder you copied this to.
 
 # Usage
+
+`hyper_save_drifter.py -h` will show help
 
 1. Copy your old save file from your other computer to your new computer
     * [Save Game Locations (Depends on OS)](http://pcgamingwiki.com/wiki/Hyper_Light_Drifter#Save_game_data_location)
