@@ -21,28 +21,23 @@ More testing will be done.
 # Usage
 
 1. Copy your old save file from your other computer to your new computer
-1. Create a new save file
+    * [Save Game Locations (Depends on OS)](http://pcgamingwiki.com/wiki/Hyper_Light_Drifter#Save_game_data_location)
+1. Create a new save file on your new computer
     1. Start a new game and watch (or skip) the initial cutscene
     1. The game should now auto-save
     1. Once it has saved, exit the game.
 1. Find the save file you just created
-    * [Save Game Location (Depends on OS)](http://pcgamingwiki.com/wiki/Hyper_Light_Drifter#Save_game_data_location)
-1. Edit `hyper_save_drifter.py`
-    1. Change `/path/to/my_old_save_file.sav` to the location you copied your old file to in Step 1
-      * This must be an absolute path, such as `C:/Users/James/Desktop/my_old_save_file.sav`
-    1. Change `/path/tono_progress_save.sav` to the location of the save newly created in Step 2
-      * This must be a absolute path, such as `C:/Users/James/Desktop/my_old_save_file.sav`
-    1. (Optional) set `name_change` to `True` (case-sensitive) and modify `new_player_name` to change the name of your save file.
-    1. (Optional) change `save_slot_number` to save to a different save slot.
-      * Note: This number is 0-indexed, meaning it is off-by-1. By default `save_slot_number` is `3`. Therefore it will save in slot 4 (3+1=4)
-1. Run `python hyper_save_drifter.py`
-  * If the final file exists already it will not overwrite it.
+    * [Save Game Locations (Depends on OS)](http://pcgamingwiki.com/wiki/Hyper_Light_Drifter#Save_game_data_location)
+1. Run `python hyper_save_drifter.py /path/to/my_old.sav /path/to/temp.sav [--save-num save_slot_number] [--change-name my_new_filename]`
+    * Replace the paths with the path to your old save file and your temp save (created in Step 2)
+      * eg: `C:/Users/James/Download/from_old_pc.sav` or `/home/James/Downloads/from_old_pc.sav`
+    * `--save-num` is optional if you want to set the save slot number to something (default is 4th slot)
+      * NOTE: The saves are zero-indexed. Therefore, to save in slot 1 set `--save-num 0` to save in slot 4 set `--save-num 3`
+    * `--change-name` is optional and changes the name your your save file.
 
 # Plans/To-Do
 
 * GUI interface for people who don't like CLIs
-* Non-hardcoded values
-* argparse support so parameters can simply be passed via commandline.
 * More checks and confirmations to ensure everyone is happy with the result.
 * Back-up files before doing anything.
 * Test more OS versions to be safe.
